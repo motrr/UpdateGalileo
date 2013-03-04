@@ -275,10 +275,13 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/../Galileo-iOS-SDK/frameworks\"",
+					"\"$(SRCROOT)/../../Library/Developer/Xcode/DerivedData/Build/Products/Debug-iphoneos\"",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "UpdateGalileo/UpdateGalileo-Prefix.pch";
 				INFOPLIST_FILE = "UpdateGalileo/UpdateGalileo-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				OTHER_LDFLAGS = "";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -290,10 +293,13 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/../Galileo-iOS-SDK/frameworks\"",
+					"\"$(SRCROOT)/../../Library/Developer/Xcode/DerivedData/Build/Products/Debug-iphoneos\"",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "UpdateGalileo/UpdateGalileo-Prefix.pch";
 				INFOPLIST_FILE = "UpdateGalileo/UpdateGalileo-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				OTHER_LDFLAGS = "";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -318,6 +324,7 @@
 				83DD8FA816E3FFCE00FC6263 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
