@@ -1,0 +1,3 @@
+[submodule "Galileo-iOS-SDK"]
+	path = Galileo-iOS-SDK
+	url = git@github.com:motrr/Galileo-iOS-SDK.git
