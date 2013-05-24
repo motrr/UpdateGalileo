@@ -7,7 +7,7 @@
 //
 
 #import "ViewController.h"
-#import <GalileoControl-private/GalileoControl+Private.h>
+#import <GalileoControl/GalileoControl.h>
 
 @interface ViewController () <GalileoDelegate>
 
@@ -74,37 +74,25 @@
     [self printInfo: @"Checking for updates..."];
     
     // Check for updates and if available, launch the motrr app to install them
-    //[[[Galileo sharedGalileo] firmwareManager] checkForUpdateOnCompletion:nil];
-    
-    // Since the motrr app is not yet available, this TEMPORARY solution will update Galileo's firmware (without leaving the app) to the latest public release. Note that this method uses a private motrr framework and should not be copied by third party developers.
-    [[[Galileo sharedGalileo] firmwareManager] getAvailableReleasesForGroup: @"public"
-                                                               onCompletion:
-     ^(NSArray* firmwareVersionStrings)
-     {
-         // Check if we returned any results at all
-         if (firmwareVersionStrings != nil && [firmwareVersionStrings count] > 0) {
-             
-             // Get the most recent version
-             unsigned int latestFirmwareVersion = 0;
-             for (NSString* firmwareVersionString in firmwareVersionStrings) {
-                 if ([firmwareVersionString intValue] > latestFirmwareVersion) latestFirmwareVersion = [firmwareVersionString intValue];
-             }
-             
-             // Check to see if an update is available to the current version
-             unsigned int currentFirmwareVersion = [[Galileo sharedGalileo] firmwareVersion];
-             if (currentFirmwareVersion < latestFirmwareVersion) {
-                 
-                 [self printInfo: [NSString stringWithFormat:@"Update is available from current version %u to latest version %u", currentFirmwareVersion, latestFirmwareVersion]];
-                 
-                 // Prompt user to install update, this will require switching to the motrr LAUNCH app
-                 [[[Galileo sharedGalileo] firmwareManager] downloadAndInstallRelease:[NSString stringWithFormat:@"%u", latestFirmwareVersion] onCompletion:nil];
-             }
-             else {
-                 [self printInfo: [NSString stringWithFormat:@"Current version %u is already most recent available.", currentFirmwareVersion]];
-             }
-             
-         }
-     }
+    [[[Galileo sharedGalileo] firmwareManager] checkForUpdate:
+        ^(FirmwareUpdateCheckOutcome outcome)
+        {
+            switch (outcome) {
+                case FirmwareUpdateCheckOutcomeConnectionUnavailable:
+                    [self printInfo:@"Connection unavailable."];
+                    break;
+                    
+                case FirmwareUpdateCheckOutcomeAlreadyUpToDate:
+                    [self printInfo:@"Firmware is already up to date."];
+                    break;
+                    
+                case FirmwareUpdateCheckOutcomeUpdateAvailable:
+                    [[[Galileo sharedGalileo] firmwareManager] promptUserToUpdate:^(){
+                        [self printInfo:@"Update check complete."];
+                    }];
+                    break;
+            }
+        }
      ];
 }
 

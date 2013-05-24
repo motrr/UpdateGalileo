@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		83A42E451705233B005E0620 /* GalileoControl-private.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 83A42E441705233B005E0620 /* GalileoControl-private.framework */; };
+		8317E40E174FEEC0002870E7 /* GalileoControl.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8317E40D174FEEC0002870E7 /* GalileoControl.framework */; };
 		83DD8F8716E3FFCD00FC6263 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 83DD8F8616E3FFCD00FC6263 /* UIKit.framework */; };
 		83DD8F8916E3FFCD00FC6263 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 83DD8F8816E3FFCD00FC6263 /* Foundation.framework */; };
 		83DD8F8B16E3FFCD00FC6263 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 83DD8F8A16E3FFCD00FC6263 /* CoreGraphics.framework */; };
@@ -24,7 +24,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		83A42E441705233B005E0620 /* GalileoControl-private.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = "GalileoControl-private.framework"; path = "../GalileoControl-private.framework"; sourceTree = "<group>"; };
+		8317E40D174FEEC0002870E7 /* GalileoControl.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GalileoControl.framework; path = "../Galileo-iOS-SDK/frameworks/GalileoControl.framework"; sourceTree = "<group>"; };
 		83DD8F8316E3FFCD00FC6263 /* UpdateGalileo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UpdateGalileo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		83DD8F8616E3FFCD00FC6263 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		83DD8F8816E3FFCD00FC6263 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -55,7 +55,7 @@
 				83DD8F8716E3FFCD00FC6263 /* UIKit.framework in Frameworks */,
 				83DD8F8916E3FFCD00FC6263 /* Foundation.framework in Frameworks */,
 				83DD8F8B16E3FFCD00FC6263 /* CoreGraphics.framework in Frameworks */,
-				83A42E451705233B005E0620 /* GalileoControl-private.framework in Frameworks */,
+				8317E40E174FEEC0002870E7 /* GalileoControl.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -82,7 +82,7 @@
 		83DD8F8516E3FFCD00FC6263 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				83A42E441705233B005E0620 /* GalileoControl-private.framework */,
+				8317E40D174FEEC0002870E7 /* GalileoControl.framework */,
 				83DD8FAD16E405DA00FC6263 /* ExternalAccessory.framework */,
 				83DD8FAB16E405D200FC6263 /* libxml2.dylib */,
 				83DD8F8616E3FFCD00FC6263 /* UIKit.framework */,
@@ -275,7 +275,6 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/../Galileo-iOS-SDK/frameworks\"",
-					"\"$(SRCROOT)/../../Library/Developer/Xcode/DerivedData/Build/Products/Debug-iphoneos\"",
 					"\"$(SRCROOT)/..\"",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -294,7 +293,6 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/../Galileo-iOS-SDK/frameworks\"",
-					"\"$(SRCROOT)/../../Library/Developer/Xcode/DerivedData/Build/Products/Debug-iphoneos\"",
 					"\"$(SRCROOT)/..\"",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
