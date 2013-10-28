@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8307E20B181E7300004344C3 /* CoreBluetooth.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8307E20A181E7300004344C3 /* CoreBluetooth.framework */; };
 		8317E40E174FEEC0002870E7 /* GalileoControl.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8317E40D174FEEC0002870E7 /* GalileoControl.framework */; };
 		83DD8F8716E3FFCD00FC6263 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 83DD8F8616E3FFCD00FC6263 /* UIKit.framework */; };
 		83DD8F8916E3FFCD00FC6263 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 83DD8F8816E3FFCD00FC6263 /* Foundation.framework */; };
@@ -24,6 +25,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		8307E20A181E7300004344C3 /* CoreBluetooth.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreBluetooth.framework; path = System/Library/Frameworks/CoreBluetooth.framework; sourceTree = SDKROOT; };
 		8317E40D174FEEC0002870E7 /* GalileoControl.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GalileoControl.framework; path = "../Galileo-iOS-SDK/frameworks/GalileoControl.framework"; sourceTree = "<group>"; };
 		83DD8F8316E3FFCD00FC6263 /* UpdateGalileo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UpdateGalileo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		83DD8F8616E3FFCD00FC6263 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
@@ -50,6 +52,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8307E20B181E7300004344C3 /* CoreBluetooth.framework in Frameworks */,
 				83DD8FAE16E405DA00FC6263 /* ExternalAccessory.framework in Frameworks */,
 				83DD8FAC16E405D200FC6263 /* libxml2.dylib in Frameworks */,
 				83DD8F8716E3FFCD00FC6263 /* UIKit.framework in Frameworks */,
@@ -82,6 +85,7 @@
 		83DD8F8516E3FFCD00FC6263 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				8307E20A181E7300004344C3 /* CoreBluetooth.framework */,
 				8317E40D174FEEC0002870E7 /* GalileoControl.framework */,
 				83DD8FAD16E405DA00FC6263 /* ExternalAccessory.framework */,
 				83DD8FAB16E405D200FC6263 /* libxml2.dylib */,

@@ -9,7 +9,7 @@
 #import "ViewController.h"
 #import <GalileoControl/GalileoControl.h>
 
-@interface ViewController () <GalileoDelegate>
+@interface ViewController () <GCGalileoDelegate>
 
 @end
 
@@ -22,8 +22,8 @@
     
     // Start waiting for Galileo to connect
     [self printInfo: @"Connect Galileo to begin"];
-    [Galileo sharedGalileo].delegate = self;
-    [[Galileo sharedGalileo] waitForConnection];
+    [GCGalileo sharedGalileo].delegate = self;
+    [[GCGalileo sharedGalileo] waitForConnection];
 }
 
 - (void) printInfo: (NSString*) infoString
@@ -57,7 +57,7 @@
 {
     [self disableUI];
     [self printInfo: @"Galileo disconnected"];
-    [[Galileo sharedGalileo] waitForConnection];
+    [[GCGalileo sharedGalileo] waitForConnection];
 }
 
 - (void) disableUI
@@ -74,20 +74,20 @@
     [self printInfo: @"Checking for updates..."];
     
     // Check for updates and if available, launch the motrr app to install them
-    [[[Galileo sharedGalileo] firmwareManager] checkForUpdate:
-        ^(FirmwareUpdateCheckOutcome outcome)
+    [[[GCGalileo sharedGalileo] firmwareManager] checkForUpdate:
+        ^(GCFirmwareUpdateCheckOutcome outcome)
         {
             switch (outcome) {
-                case FirmwareUpdateCheckOutcomeConnectionUnavailable:
+                case GCFirmwareUpdateCheckOutcomeConnectionUnavailable:
                     [self printInfo:@"Connection unavailable."];
                     break;
                     
-                case FirmwareUpdateCheckOutcomeAlreadyUpToDate:
+                case GCFirmwareUpdateCheckOutcomeAlreadyUpToDate:
                     [self printInfo:@"Firmware is already up to date."];
                     break;
                     
-                case FirmwareUpdateCheckOutcomeUpdateAvailable:
-                    [[[Galileo sharedGalileo] firmwareManager] promptUserToUpdate:^(){
+                case GCFirmwareUpdateCheckOutcomeUpdateAvailable:
+                    [[[GCGalileo sharedGalileo] firmwareManager] promptUserToUpdate:^(){
                         [self printInfo:@"Update check complete."];
                     }];
                     break;
