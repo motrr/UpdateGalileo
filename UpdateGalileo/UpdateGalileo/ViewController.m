@@ -1,7 +1,3 @@
-//
-//  ViewController.m
-//  UpdateGalileo
-//
 //  Created by Chris Harding on 3/3/13.
 //  Copyright (c) 2013 Chris Harding. All rights reserved.
 //
@@ -86,16 +82,23 @@
                     [self printInfo:@"Firmware is already up to date."];
                     break;
                     
-                case GCFirmwareUpdateCheckOutcomeUpdateAvailable:
+                case GCFirmwareUpdateCheckOutcomeUpdateAvailable: {
                     [[[GCGalileo sharedGalileo] firmwareManager] promptUserToUpdate:^(){
                         [self printInfo:@"Update check complete."];
                     }];
+                    break;
+                }
+                    
+                case GCFirmwareUpdateDeviceUnavailable:
+                    [self printInfo:@"Device unavailable."];
+                    break;
+                    
+                default:
+                    [self printInfo:@"Unknown GCFirmwareUpdateCheckOutcome returned."];
                     break;
             }
         }
      ];
 }
-
-
 
 @end
